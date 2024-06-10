@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Words</title>
+</head>
+<body>
+<form th:action="@{/}" th:method="post">
+    <p>Text:
+<!--        <input type="text" />-->
+        <input type="text" th:value="${text}" name="text"/>
+    </p>
+    <p>
+        <input type="submit" value="Add new text"/>
+    </p>
+</form>
+<h3>
+    List of words
+</h3>
+<table>
+    <tr th:each="word:${words}">
+        <td th:text="${word.id}"/>
+        <td th:text="${word.name}"/>
+    </tr>
+</table>
+</body>
+</html>
